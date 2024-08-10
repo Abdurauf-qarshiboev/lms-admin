@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            "2xl": { max: "1535px" },
+            // => @media (max-width: 1535px) { ... }
+
+            xl: { max: "1279px" },
+            // => @media (max-width: 1279px) { ... }
+
+            lg: { max: "1023px" },
+            // => @media (max-width: 1023px) { ... }
+
+            md: { max: "767px" },
+            // => @media (max-width: 767px) { ... }
+
+            sm: { max: "639px" },
+            // => @media (max-width: 639px) { ... }
+          },
+          extend: {
+            scale: {
+              '101': '1.01',
+            },
+            boxShadow: {
+              addbutton: "0 20px 50px rgba(55, 69, 87, 0.1)",
+              scaleshadow: "0 0 11px rgba(33, 33, 33, 0.2)",
+            },
+            colors: {
+              cgreen: "#4CBC9A",
+              cgray: "#fafafa",
+              cblack: "#374557",
+              cviolet: "#A098AE",
+              cpink: "#FFBABF",
+              corange: "#FC6B57",
+              cringgray: "#DBDBDB",
+              cskyblue: "#3CC2E0",
+              cdarkgray: "#374557",
+              cyellow: "#FEC64F",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <main class="flex h-screen w-screen overflow-hidden bg-cgray">
+      <aside
+        class="bg-white h-screen w-[345px] px-[46px] xl:w-[300px] xl:px-5 py-8">
+        <a href="#" class="block text-center text-4xl poppins-bold text-cblack">
+          <span class="text-cgreen text-[40px]">LMS</span> admin
+        </a>
+        <div class="flex flex-col gap-4 mt-[85px] xl:mt-5 xl:gap-2 text-cviolet">
+          <a
+            href="#"
+            class="page-current group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4 "
+          >
+            <img
+              src="./images/Apps.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Bosh sahifa
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/open-book.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Fakultetlar
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/calendar.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Darslar
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/users.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Xodimlar
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/account.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Talabalar
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/Checkmark.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Topshiriqlar
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/Activity.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Buxgalteriya
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/file.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Hujjatlar
+          </a>
+        </div>
+      </aside>
+      <section class="flex-1 h-screen flex flex-col">
+        <header class="bg-white py-[30px] pl-10 pr-[50px] flex items-center">
+          <div class="poppins-bold text-4xl text-cblack">Bosh sahifa</div>
+          <form
+            class="flex gap-2 ml-[191px] px-6 py-[14px] bg-cgray rounded-2xl hover:outline hover:outline-cgreen"
+          >
+            <img src="./images/magnifier.svg" alt="" />
+            <input
+              type="text"
+              placeholder="Kalit so’z bo’yicha qidiruv"
+              class="w-[425px] bg-cgray text-cviolet text-lg focus:outline-0"
+            />
+          </form>
+          <div class="flex ml-auto gap-2">
+            <button
+              class="group relative hover:bg-cgreen size-[60px] flex items-center justify-center rounded-2xl"
+            >
+              <span
+                class="size-2 bg-cgreen rounded absolute right-[10px] top-[10px] group-hover:brightness-0 group-hover:invert"
+              >
+              </span>
+              <img
+                src="./images/chat.svg"
+                alt=""
+                class="group-hover:brightness-0 group-hover:invert"
+              />
+            </button>
+            <button
+              class="group relative hover:bg-cgreen size-[60px] flex items-center justify-center rounded-2xl"
+            >
+              <span
+                class="size-2 bg-cgreen rounded absolute right-[10px] top-[10px] group-hover:brightness-0 group-hover:invert"
+              >
+              </span>
+              <img
+                src="./images/Bell.svg"
+                alt=""
+                class="group-hover:brightness-0 group-hover:invert"
+              />
+            </button>
+            <a
+              href="#"
+              class="relative group hover:bg-cgreen size-[60px] flex items-center justify-center rounded-2xl"
+            >
+              <img
+                src="./images/Settings.svg"
+                alt=""
+                class="group-hover:brightness-0 group-hover:invert"
+              />
+            </a>
+            <a
+              href="#"
+              class="relative ml-4 size-[60px] flex items-center justify-center rounded-2xl overflow-hidden"
+            >
+              <img src="./images/avatar.jpg" alt="" class="cover" />
+            </a>
+          </div>
+        </header>
+        <section class="flex-1 overflow-auto p-10 pr-[50px]">
+          <div class="flex gap-10">
+            <!-- Center part -->
+            <div class="flex-1">
+              <!-- top green banner with text -->
+              <div
+                class="rounded-2xl mb-10 relative overflow-hidden pt-[44px] pr-[49px] pl-[52px] pb-[53px]"
+              >
+                <div
+                  class="text-white text-[32px] relative z-10 poppins-bold tex-left leading-12"
+                >
+                  “International Conference on Information Science and
+                  Communication Technologies” ilmiy kengashi 24-oktabrda bo’lib
+                  o’tadi
+                </div>
+                <img
+                  src="./images/Mask Group-conference.png"
+                  alt="mask"
+                  class="absolute left-0 top-0 h-full w-full"
+                />
+              </div>
+              <!-- 3 cards -->
+              <div class="flex gap-6">
+                <!-- each of 3 cards go here! -->
+                <div class="basis-1/3">
+                  <div
+                    class="rounded-2xl bg-cgreen p-8 text-white relative overflow-hidden"
+                  >
+                    <!-- checkmark icon -->
+                    <div
+                      class="rounded-2xl size-[72px] flex items-center justify-center bg-white ring-[1px] ring-cringgray mb-8"
+                    >
+                      <img src="./images/check.svg" alt="" />
+                    </div>
+                    <!-- checkmark icon -->
+                    <div class="poppins-bold text-4xl text-left leading-[54px]">
+                      1.500
+                    </div>
+                    <div class="poppins-regular text-lg">
+                      Umumiy xodimlarda <br />
+                      topshiriqlar
+                    </div>
+
+                    <img
+                      src="./images/check.svg"
+                      alt="check"
+                      class="absolute size-[215px] bottom-[13px] brightness-0 invert opacity-25 -right-[53px]"
+                    />
+                  </div>
+                </div>
+
+                <div class="basis-1/3">
+                  <div
+                    class="rounded-2xl bg-cskyblue p-8 text-white relative overflow-hidden"
+                  >
+                    <!-- checkmark icon -->
+                    <div
+                      class="rounded-2xl size-[72px] flex items-center justify-center bg-white ring-[1px] ring-cringgray mb-8"
+                    >
+                      <img src="./images/Bulb.svg" alt="" />
+                    </div>
+                    <!-- checkmark icon -->
+                    <div class="poppins-bold text-4xl text-left leading-[54px]">
+                      10
+                    </div>
+                    <div class="poppins-regular text-lg">
+                      Fakultetlar <br />
+                      soni
+                    </div>
+
+                    <img
+                      src="./images/Bulb.svg"
+                      alt="check"
+                      class="absolute size-[215px] bottom-[13px] brightness-0 invert opacity-25 -right-[53px]"
+                    />
+                  </div>
+                </div>
+
+                <div class="basis-1/3">
+                  <div
+                    class="rounded-2xl bg-cdarkgray p-8 text-white relative overflow-hidden"
+                  >
+                    <!-- checkmark icon -->
+                    <div
+                      class="rounded-2xl size-[72px] flex items-center justify-center bg-white ring-[1px] ring-cringgray mb-8"
+                    >
+                      <img src="./images/cardusers.svg" alt="" />
+                    </div>
+                    <!-- checkmark icon -->
+                    <div class="poppins-bold text-4xl text-left leading-[54px]">
+                      1.112
+                    </div>
+                    <div class="poppins-regular text-lg">
+                      Talabalar <br />
+                      soni
+                    </div>
+
+                    <img
+                      src="./images/cardusers.svg"
+                      alt="check"
+                      class="absolute size-[215px] bottom-[13px] brightness-0 invert opacity-25 -right-[53px]"
+                    />
+                  </div>
+                </div>
+
+                <!-- each of 3 cards go here -^ -->
+              </div>
+              <!-- chart "Talabalar O`zlashtirishi"-->
+              <div class="flex gap-10 mt-10">
+                <!-- chart "Talabalar O`zlashtirishi" -(main chart)-->
+                <div
+                  class="flex flex-col flex-1 items-start p-8 bg-white rounded-2xl"
+                >
+                  <!-- top info -->
+                  <div
+                    class="flex items-center justify-between w-full mb-[18px]">
+                    <div class="poppins-bold text-2xl text-cblack">
+                      Talabalar o’zlashtirish
+                    </div>
+                    <div class="flex gap-[31px] text-sm text-cviolet mr-7">
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="rounded-full size-3 bg-white ring-[3px] ring-inset ring-cyellow"
+                        ></div>
+                        <p>2021-2022</p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="rounded-full size-3 bg-white ring-[3px] ring-inset ring-cgreen"
+                        ></div>
+                        <p>2022-2023</p>
+                      </div>
+                    </div>
+                    <img
+                      src="./images/Dots.svg"
+                      alt=""
+                      class="hover:cursor-pointer hover:scale-110"/>
+                  </div>
+                  <!-- top info -->
+                  <!-- line graph -->
+                  <div class="cursor-pointer w-full">
+                    <a href="#"><img src="./images/chart.png" alt="" /></a>
+                  </div>
+                  <!-- line graph -->
+                </div>
+                <!-- chart "Talabalar O`zlashtirishi" progress bar rounded -->
+                <div
+                  class="flex flex-col items-center p-8 bg-white rounded-2xl"
+                >
+                  <!-- bar -->
+                  <div class="relative mb-8">
+                    <img src="./images/circlebar.svg" alt="" class="" />
+                    <div
+                      class="flex items-center justify-center absolute top-[31px] left-[31px] size-[96px] bg-cgreen/10 text-cblack poppins-bold text-[32px] rounded-full"
+                    >
+                      75%
+                    </div>
+                  </div>
+                  <!-- texts -->
+                  <div class="flex flex-col items-center mb-4 gap-2 w-[193px]">
+                    <h2 class="poppins-bold text-lg text-cblack">
+                      Kontraktlar hisoboti
+                    </h2>
+                    <p class="poppins-regular text-sm text-cviolet text-center">
+                      Umumiy 1120 talabalardan to’lovni amalga oshirish
+                      ko’rsatkichi
+                    </p>
+                  </div>
+                  <!-- button -->
+                  <button
+                    class="grid place-items-center poppins-semibold text-sm text-white bg-cgreen py-[10px] px-5 rounded-lg hover:bg-white hover:ring-1 hover:ring-inset hover:ring-cgreen hover:text-cgreen"
+                  >
+                    Batafsil
+                  </button>
+                </div>
+              </div>
+              <!-- bar graph "Darsga qatnashish" -->
+              <div class="rounded-2xl bg-white p-8 mt-10">
+                <div class="flex mb-7 items-center">
+                  <h2 class="poppins-bold text-2xl text-cblack">
+                    Darsga qatnashish
+                  </h2>
+                  <!-- colored rings -->
+                  <div
+                    class="flex gap-6 text-sm text-cviolet mr-[39px] ml-auto"
+                  >
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="rounded-full size-3 bg-white ring-[3px] ring-inset ring-cyellow"
+                      ></div>
+                      <p>2021-2022</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="rounded-full size-3 bg-white ring-[3px] ring-inset ring-cgreen"
+                      ></div>
+                      <p>2022-2023</p>
+                    </div>
+                  </div>
+                  <!-- select option -->
+                  <div class="relative inline-block w-[140px] h-10 after:content-[url('./images/chevron-downg.svg')] after:size-6 after:absolute after:top-1/2 after:right-[28px] after:-translate-y-1/2 after:cursor-pointer after:cursor-pointer mr-6 group">
+                    <select
+                      class="appearance-none poppins-regular text-cblack text-sm w-full bg-cgray rounded-lg border-none rounded-lg px-7 py-[9.5px]  outline-0 cursor-pointer"
+                    >
+                      <option selected >Joriy yil</option>
+                      <option >option 1</option>
+                      <option >Option 2</option>
+                      <option >Option 3</option>
+                    </select>
+                  </div>
+
+                  <!-- dots -->
+                   <button  class="size-6 hover:scale-110">
+                    <img src="./images/Dots.svg" alt="">
+                   </button>
+                </div>
+                <!-- bar graph -->
+                <img src="./images/bar-chart.png" alt="">
+              </div>
+            </div>
+
+            <!-- right side bar -->
+            <div class="w-[450px] space-y-10">
+              <!-- calendar -->
+              <div class="px-[62px] py-[32px] bg-white rounded-2xl">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-x-16">
+                  <div
+                    class="text-center lg:col-start-8 lg:col-end-13 lg:row-start-1 lg:mt-9 xl:col-start-9"
+                  >
+                    <div class="flex items-center text-gray-900">
+                      <button
+                        type="button"
+                        class="-m-1.5 flex flex-none items-center justify-center p-1.5 text-cviolet text-bold hover:text-cgreen hover:scale-150"
+                      >
+                        <span class="sr-only">Previous month</span>
+                        <svg
+                          class="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                      <div class="flex-auto text-2xl poppins-bold text-cblack">
+                        Oktabr, 2022
+                      </div>
+                      <button
+                        type="button"
+                        class="-m-1.5 flex flex-none items-center justify-center p-1.5 text-cviolet hover:text-cgreen hover:scale-150"
+                      >
+                        <span class="sr-only">Next month</span>
+                        <svg
+                          class="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      class="mt-6 grid grid-cols-7 text-lg leading-6 text-cviolet"
+                    >
+                      <div>M</div>
+                      <div>T</div>
+                      <div>W</div>
+                      <div>T</div>
+                      <div>F</div>
+                      <div>S</div>
+                      <div class="text-corange">S</div>
+                    </div>
+                    <div
+                      class="isolate mt-2 grid grid-cols-7 gap-px rounded-lg bg-white text-lg text-cblack"
+                    >
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-01"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >1</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-01"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >2</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-02"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >3</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-04"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >4</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-cgreen rounded-lg text-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10 relative"
+                      >
+                        <span
+                          class="size-[13px] rounded-2xl bg-red-500 absolute -top-[2px] -right-[1px] border-[2px] border-inset border-white border-transparent"
+                        >
+                        </span>
+                        <time
+                          datetime="2022-01-05"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >5</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-06"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >6</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 text-corange hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-14"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >7</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-08"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >8</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-09"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >9</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-09"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >10</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-11"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >11</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-12"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >12</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-13"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >13</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 text-corange hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-14"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >14</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-15"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >15</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-16"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >16</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-cgreen rounded-lg text-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10 relative"
+                      >
+                        <span
+                          class="size-[13px] rounded-2xl bg-red-500 absolute -top-[2px] -right-[1px] border-[2px] border-inset border-white border-transparent"
+                        >
+                        </span>
+                        <time
+                          datetime="2022-01-05"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >17</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-18"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >18</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-19"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >19</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-20"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >20</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 text-corange hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-21"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >21</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 text-cblack hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-22"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >22</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-23"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >23</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-24"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >24</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-25"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >25</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-26"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >26</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-27"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >27</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white text-corange py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-28"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >28</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-29"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >29</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-30"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >30</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-01-31"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >31</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 text-cviolet hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-02-01"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >1</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 text-cviolet hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-02-02"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >2</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 text-cviolet hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-02-03"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >3</time
+                        >
+                      </button>
+                      <button
+                        type="button"
+                        class="bg-white py-1.5 text-corange hover:bg-cgreen hover:text-white hover:rounded-lg focus:z-10"
+                      >
+                        <time
+                          datetime="2022-02-04"
+                          class="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
+                          >4</time
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- vazifalar -->
+              <div
+                class="pt-[32px] px-[32px] pb-[56px] bg-white rounded-2xl space-y-8"
+              >
+                <div class="flex justify-between items-center">
+                  <div
+                    class="text-cblack text-left text-2xl leading-9 poppins-bold"
+                  >
+                    Vazifalar
+                  </div>
+                  <button><img src="./images/Dots.svg" alt="" /></button>
+                </div>
+                <div>
+                  <div class="h-4 bg-cgray rounded overflow-hidden mb-[10px]">
+                    <div class="bg-cyellow h-full w-4/5 rounded"></div>
+                  </div>
+                  <div
+                    class="flex justify-between items-center poppins-semibold text-sm leading-[21px]"
+                  >
+                    <div class="text-cblack">Dasturing injiniring</div>
+                    <div class="text-cviolet">9/10</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="h-4 bg-cgray rounded overflow-hidden mb-[10px]">
+                    <div class="bg-cgreen h-full w-2/5 rounded"></div>
+                  </div>
+                  <div
+                    class="flex justify-between items-center poppins-semibold text-sm leading-[21px]"
+                  >
+                    <div class="text-cblack">Kompyuter injiniring</div>
+                    <div class="text-cviolet">4/10</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- faoliyat jadvali -->
+              <!-- banner -->
+              <div class="flex items-center justify-between mb-6">
+                <div class="space-y-2">
+                  <div
+                    class="text-cblack text-2xl text-left leading-9 poppins-bold"
+                  >
+                    Faoliyat jadvali
+                  </div>
+                  <div class="text-cviolet text-sm text-left leading-[21px]">
+                    Chorshanba, 19 oktabr , 2022
+                  </div>
+                </div>
+                <button
+                  class="group size-[60px] bg-white rounded-2xl flex items-center justify-center hover:bg-cgreen shadow-addbutton"
+                >
+                  <img
+                    src="./images/add sign.svg"
+                    alt="add"
+                    class="group-hover:brightness-0 group-hover:invert"
+                  />
+                </button>
+              </div>
+              <!-- Faoliyat jadvali cards -->
+              <!-- cards go here -->
+              <div class="space-y-5 mb-[25px]">
+                <!-- card -->
+                <div
+                  class="hover:shadow-scaleshadow hover:scale-101 transition duration-200 ease-in-out cursor-pointer bg-white pt-6 pr-7 pb-[18px] pl-[22px] rounded-2xl border-l-[18px] border-l-cblack space-y-[18px]"
+                >
+                  <div
+                    class="poppins-semibold text-cblack text-lg leading-[25px] text-left"
+                  >
+                    Xurmatli professor-o‘qituvchilar va ilmiy izlanuvchilar!
+                    Xusan G‘ayratovichning PhD himoyasiga taklif etamiz
+                  </div>
+                  <div
+                    class="flex divide-x divide-cgray text-sm poppins-regular leading-[21px] text-cviolet"
+                  >
+                    <div class="flex gap-2 items-center mr-[19px]">
+                      <img src="./images/calendarforcard.svg" alt="" />
+                      <div>3-noyabr 2022</div>
+                    </div>
+                    <div class="flex gap-2 items-center pl-[16px]">
+                      <img src="./images/clockforcard.svg" alt="" />
+                      <div>10:00 - 11:30</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- card -->
+
+                <!-- card -->
+                <div
+                  class="hover:shadow-scaleshadow hover:scale-101 transition duration-200 ease-in-out cursor-pointer bg-white py-6 pr-7 pl-[22px] rounded-2xl border-l-[18px] border-l-cgreen space-y-[9px]"
+                >
+                  <div
+                    class="poppins-semibold text-cblack text-lg leading-[25px] text-left"
+                  >
+                    2022-2023 o’quv yili 1-semestr yakunlash imtixoni
+                  </div>
+                  <div
+                    class="flex divide-x divide-cgray text-sm poppins-regular leading-[21px] text-cviolet"
+                  >
+                    <div class="flex gap-2 items-center mr-[19px]">
+                      <img src="./images/calendarforcard.svg" alt="" />
+                      <div>10-yanvar 2023</div>
+                    </div>
+                    <div class="flex gap-2 items-center pl-[16px]">
+                      <img src="./images/clockforcard.svg" alt="" />
+                      <div>09:00 - 11:00</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- card -->
+
+                <!-- card -->
+                <div
+                  class="hover:shadow-scaleshadow hover:scale-101 transition duration-200 ease-in-out cursor-pointer bg-white pt-6 pr-7 pb-[29px] pl-[22px] rounded-2xl border-l-[18px] border-l-cyellow space-y-[16px]"
+                >
+                  <div
+                    class="poppins-semibold text-cblack text-lg leading-[25px] text-left"
+                  >
+                    1-kurslarni kontrakt to’lov muddati
+                  </div>
+                  <div
+                    class="flex divide-x divide-cgray text-sm poppins-regular leading-[21px] text-cviolet"
+                  >
+                    <div class="flex gap-2 items-center mr-[19px]">
+                      <img src="./images/calendarforcard.svg" alt="" />
+                      <div>23-oktabr 2022</div>
+                    </div>
+                    <div class="flex gap-2 items-center pl-[16px]">
+                      <img src="./images/clockforcard.svg" alt="" />
+                      <div>09:00</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- card -->
+
+                <!-- card -->
+                <div
+                  class="hover:shadow-scaleshadow hover:scale-101 transition duration-200 ease-in-out cursor-pointer bg-white py-6 pr-7 pl-[22px] rounded-2xl border-l-[18px] border-l-cgreen space-y-[9px]"
+                >
+                  <div
+                    class="poppins-semibold text-cblack text-lg leading-[25px] text-left"
+                  >
+                    2022-2023 o’quv yili 1-semestr yakunlash imtixoni
+                  </div>
+                  <div
+                    class="flex divide-x divide-cgray text-sm poppins-regular leading-[21px] text-cviolet"
+                  >
+                    <div class="flex gap-2 items-center mr-[19px]">
+                      <img src="./images/calendarforcard.svg" alt="" />
+                      <div>10-yanvar 2023</div>
+                    </div>
+                    <div class="flex gap-2 items-center pl-[16px]">
+                      <img src="./images/clockforcard.svg" alt="" />
+                      <div>09:00 - 11:00</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- card -->
+              </div>
+
+              <!-- more button -->
+              <button
+                class="flex items-center justify-center w-full h-[60px] rounded-2xl border border-cviolet text-cblacj text-lg leading-[27px] hover:border-cgreen hover:text-cgreen hover:scale-105 transition duration-300 ease-in-out"
+              >
+                Ko’proq
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

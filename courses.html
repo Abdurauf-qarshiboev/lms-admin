@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            "2xl": { max: "1535px" },
+            // => @media (max-width: 1535px) { ... }
+
+            xl: { max: "1279px" },
+            // => @media (max-width: 1279px) { ... }
+
+            lg: { max: "1023px" },
+            // => @media (max-width: 1023px) { ... }
+
+            md: { max: "767px" },
+            // => @media (max-width: 767px) { ... }
+
+            sm: { max: "639px" },
+            // => @media (max-width: 639px) { ... }
+          },
+          extend: {
+            boxShadow: {
+              'addbutton': '0 20px 50px rgba(55, 69, 87, 0.1)',
+              'scaleshadow': '0 0 11px rgba(33, 33, 33, 0.2)',
+            },
+            colors: {
+              cgreen: "#4CBC9A",
+              cgray: "#fafafa",
+              cblack: "#374557",
+              cviolet: "#A098AE",
+              corange:"#FC6B57",
+              cringgray:"#DBDBDB",
+              cskyblue:"#3CC2E0",
+              cdarkgray:"#374557",
+              cyellow:"#FEC64F",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <main class="flex h-screen w-screen overflow-hidden bg-cgray">
+      <aside
+        class="bg-white h-screen w-[345px] px-[46px] xl:w-[300px] xl:px-5 py-8">
+        <a href="#" class="block text-center text-4xl poppins-bold text-cblack">
+          <span class="text-cgreen text-[40px]">LMS</span> admin
+        </a>
+        <div class="flex flex-col gap-4 mt-[85px] mb-[80px] xl:mb-5 xl:mt-5 xl:gap-2 text-cviolet">
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4 "
+          >
+            <img
+              src="./images/Apps.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Dashboard
+          </a>
+          <a
+            href="#"
+            class="page-current group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/open-book.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Courses
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/calendar.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Schedule
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/users.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Instructors
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/account.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Profile
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/Activity.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Activity
+          </a>
+        </div>
+        <!-- subscribe to pro -->
+        <div class="flex flex-col items-start bg-white rounded-2xl shadow-addbutton p-8 pr-[25px]">
+            <div class="flex items-end poppins-bold text-lg text-cblack leading-[27px] mb-2">
+              Upgrade your Account to Pro
+              <img src="./images/Medal.svg" alt="medal">
+            </div>
+            <div class="poppins-regular text-sm text-cviolet pr-[7px] mb-8 leading-[21px]">
+              Upgrade to premium to get premium features
+            </div>
+            <button class="text-white poppins-semibold text-sm bg-cgreen rounded-lg py-[9.5px] px-[22px] hover:bg-white hover:text-cgreen hover:ring-1 hover:ring-inset hover:ring-cgreen"> 
+              Upgrade
+            </button>
+        </div>
+      </aside>
+      <section class="flex-1 h-screen flex flex-col">
+        <header class="bg-white py-[30px] pl-10 pr-[50px] flex items-center">
+          <div class="poppins-bold text-4xl text-cblack">Courses</div>
+          <form class=" flex gap-2 ml-[191px] px-6 py-[14px] bg-cgray rounded-2xl hover:outline hover:outline-cgreen">
+            <img src="./images/magnifier.svg" alt="" />
+            <input type="text" placeholder="Search here..." class="w-[425px] bg-cgray text-cviolet text-lg focus:outline-0 "/>
+          </form>
+          <div class="flex ml-auto gap-2">
+            <button
+              class="group relative hover:bg-cgreen size-[60px] flex items-center justify-center rounded-2xl">
+              <span
+                class="size-2 bg-cgreen rounded absolute right-[10px] top-[10px] group-hover:brightness-0 group-hover:invert">
+              </span>
+              <img src="./images/chat.svg" alt="" class="group-hover:brightness-0 group-hover:invert"/>
+            </button>
+            <button
+              class="group relative hover:bg-cgreen size-[60px] flex items-center justify-center rounded-2xl"
+            >
+              <span
+                class="size-2 bg-cgreen rounded absolute right-[10px] top-[10px] group-hover:brightness-0 group-hover:invert"
+              >
+              </span>
+              <img
+                src="./images/Bell.svg"
+                alt=""
+                class="group-hover:brightness-0 group-hover:invert"
+              />
+            </button>
+            <a
+              href="#"
+              class="relative group hover:bg-cgreen size-[60px] flex items-center justify-center rounded-2xl"
+            >
+              <img
+                src="./images/Settings.svg"
+                alt=""
+                class="group-hover:brightness-0 group-hover:invert"
+              />
+            </a>
+            <a
+              href="#"
+              class="relative ml-4 size-[60px] flex items-center justify-center rounded-2xl overflow-hidden"
+            >
+              <img src="./images/avatar.jpg" alt="" class="cover" />
+            </a>
+          </div>
+        </header>
+        <section class="flex-1 overflow-auto p-10 pr-[50px] space-y-10">
+            
+            <article class="space-y-6">
+                <div class="flex items-center justify-between">
+                    <div class="poppins-bold text-cblack text-2xl leading-9">Popular This Week</div>
+                    <div class="flex gap-2 items-center group hover:scale-105">
+                        <div class="text-cgreen text-lg text-left leading-[27px] "><a href="#">View all</a></div>
+                        <a href="#"><img src="./images/chevron-right.svg" alt="go"></a>
+                    </div>
+                </div>
+                <!-- cards -->
+                
+                <div class="flex gap-4 ">
+                    <div class="flex flex-1">
+                        <div class=" flex items-center bg-white rounded-2xl pt-7 pr-6 pb-[29px] pl-8 group transition duration-300 ease-in-out hover:shadow-[0_0_11px_rgba(33,33,33,0.2)] hover:scale-105 cursor-pointer ">
+                            <img src="./images/Color Palette.svg" alt="graphic design" class="mr-6">
+                            <div class="space-y-2 mr-[15px] ">
+                                <div class="text-lg text-cblack leading-[27px] ">Graphic Design</div>
+                                <div class="text-cviolet text-sm leading-6 ">Lorem ipsum dolor sit amet</div>
+                            </div>
+                            <img src="./images/chevron-right.svg" alt="go" class="block">
+                        </div>
+                    </div>
+                    <div class="flex flex-1">
+                        <div class=" flex items-center bg-white rounded-2xl pt-7 pr-6 pb-[29px] pl-8 group transition duration-300 ease-in-out hover:shadow-[0_0_11px_rgba(33,33,33,0.2)] hover:scale-105 cursor-pointer ">
+                            <img src="./images/Education Website.svg" alt="graphic design" class="mr-6">
+                            <div class="space-y-2 mr-[15px] ">
+                                <div class="text-lg text-cblack leading-[27px] ">Programming</div>
+                                <div class="text-cviolet text-sm leading-6 ">Lorem ipsum dolor sit amet</div>
+                            </div>
+                            <img src="./images/chevron-right.svg" alt="go" class="block">
+                        </div>
+                    </div>
+                    <div class="flex flex-1">
+                        <div class=" flex items-center bg-white rounded-2xl pt-7 pr-6 pb-[29px] pl-8 group transition duration-300 ease-in-out hover:shadow-[0_0_11px_rgba(33,33,33,0.2)] hover:scale-105 cursor-pointer ">
+                            <img src="./images/Brain.svg" alt="graphic design" class="mr-6">
+                            <div class="space-y-2 mr-[15px] ">
+                                <div class="text-lg text-cblack leading-[27px] ">Soft Skill</div>
+                                <div class="text-cviolet text-sm leading-6 ">Lorem ipsum dolor sit amet</div>
+                            </div>
+                            <img src="./images/chevron-right.svg" alt="go" class="block">
+                        </div>
+                    </div>
+                    <div class="flex flex-1">
+                        <div class=" flex items-center bg-white rounded-2xl pt-7 pr-6 pb-[29px] pl-8 group transition duration-300 ease-in-out hover:shadow-[0_0_11px_rgba(33,33,33,0.2)] hover:scale-105 cursor-pointer ">
+                            <img src="./images/Microscope.svg" alt="graphic design" class="mr-6">
+                            <div class="space-y-2 mr-[15px] ">
+                                <div class="text-lg text-cblack leading-[27px] ">Science</div>
+                                <div class="text-cviolet text-sm leading-6 ">Lorem ipsum dolor sit amet</div>
+                            </div>
+                            <img src="./images/chevron-right.svg" alt="go" class="block">
+                        </div>
+                    </div>
+                </div>
+                <!-- cards -->
+            </article>
+
+            <article class="space-y-6">
+                <div class="flex items-center justify-between">
+                    <div class="poppins-bold text-cblack text-2xl leading-9">All Cources</div>
+                    <div class="flex gap-2 items-center group hover:scale-105">
+                        <div class="text-cgreen text-lg text-left leading-[27px] "><a href="#">View all</a></div>
+                        <a href="#"><img src="./images/chevron-right.svg" alt="go"></a>
+                    </div>
+                </div>
+                <!-- cources are here below ))) -->
+                <section class="flex flex-wrap gap-10">
+                    
+                    <!-- card -->
+                    <div class="bg-white rounded-2xl pt-6 pl-6 pr-6 pb-[26px] transition duration-300 ease-in-out hover:shadow-[0_0_11px_rgba(33,33,33,0.2)] cursor-pointer">
+                        <div class="rounded-2xl overflow-hidden"><img src="./images/fullstack.png" alt=" full stack developer"></div>
+                        <div class="mt-6 text-cblack poppins-bold text-2xl leading-9 mb-1">Fullstack Developer</div>
+                        <div class="flex mb-2">
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Adamov Elshod
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardopen-book.svg" alt="">
+                                8 oy
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Haftada 3 kun
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="poppins-bold leading-9 text-base text-cblack"><span class="text-2xl text-cgreen">800 000 </span> so’m/oy</div>
+                            <div class="poppins-regular text-lg text-cgreen leading-[27px]"><a href="#">Batafsil</a></div>
+                        </div>
+
+                    </div>
+                    <!-- card -->
+                    <!-- card -->
+                    <div class="bg-white rounded-2xl pt-6 pl-6 pr-6 pb-[26px] transition duration-300 ease-in-out hover:shadow-[0_0_11px_rgba(33,33,33,0.2)] cursor-pointer">
+                        <div class="rounded-2xl overflow-hidden"><img src="./images/uidesign.png" alt=" full stack developer"></div>
+                        <div class="mt-6 text-cblack poppins-bold text-2xl leading-9 mb-1">UI Design Beginnerr</div>
+                        <div class="flex mb-2">
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Adamov Elshod
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardopen-book.svg" alt="">
+                                8 oy
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Haftada 3 kun
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="poppins-bold leading-9 text-base text-cblack"><span class="text-2xl text-cgreen">800 000 </span> so’m/oy</div>
+                            <div class="poppins-regular text-lg text-cgreen leading-[27px]"><a href="#">Batafsil</a></div>
+                        </div>
+
+                    </div>
+                    <!-- card -->
+                    <!-- card -->
+                    <div class="bg-white rounded-2xl pt-6 pl-6 pr-6 pb-[26px] transition duration-300 ease-in-out hover:shadow-[0_0_11px_rgba(33,33,33,0.2)] cursor-pointer">
+                        <div class="rounded-2xl overflow-hidden"><img src="./images/freelancer.png" alt=" full stack developer"></div>
+                        <div class="mt-6 text-cblack poppins-bold text-2xl leading-9 mb-1">How to be Freelancer</div>
+                        <div class="flex mb-2">
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Abdurauf
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardopen-book.svg" alt="">
+                                8 oy
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Haftada 3 kun
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="poppins-bold leading-9 text-base text-cblack"><span class="text-2xl text-cgreen">800 000 </span> so’m/oy</div>
+                            <div class="poppins-regular text-lg text-cgreen leading-[27px]"><a href="#">Batafsil</a></div>
+                        </div>
+
+                    </div>
+                    <!-- card -->
+                    <!-- card -->
+                    <div class="bg-white rounded-2xl pt-6 pl-6 pr-6 pb-[26px] transition duration-300 ease-in-out hover:shadow-[0_0_11px_rgba(33,33,33,0.2)] cursor-pointer">
+                        <div class="rounded-2xl overflow-hidden"><img src="./images/uxdesign.png" alt=" full stack developer"></div>
+                        <div class="mt-6 text-cblack poppins-bold text-2xl leading-9 mb-1">UX Research</div>
+                        <div class="flex mb-2">
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Abdurauf
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardopen-book.svg" alt="">
+                                8 oy
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Haftada 3 kun
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="poppins-bold leading-9 text-base text-cblack"><span class="text-2xl text-cgreen">800 000 </span> so’m/oy</div>
+                            <div class="poppins-regular text-lg text-cgreen leading-[27px]"><a href="#">Batafsil</a></div>
+                        </div>
+
+                    </div>
+                    <!-- card -->
+                    <!-- card -->
+                    <div class="bg-white rounded-2xl pt-6 pl-6 pr-6 pb-[26px] transition duration-300 ease-in-out hover:shadow-[0_0_11px_rgba(33,33,33,0.2)] cursor-pointer">
+                        <div class="rounded-2xl overflow-hidden"><img src="./images/webdesign.png" alt=" full stack developer"></div>
+                        <div class="mt-6 text-cblack poppins-bold text-2xl leading-9 mb-1">Basic Web Design</div>
+                        <div class="flex mb-2">
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Abdurauf
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardopen-book.svg" alt="">
+                                8 oy
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Haftada 3 kun
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="poppins-bold leading-9 text-base text-cblack"><span class="text-2xl text-cgreen">800 000 </span> so’m/oy</div>
+                            <div class="poppins-regular text-lg text-cgreen leading-[27px]"><a href="#">Batafsil</a></div>
+                        </div>
+
+                    </div>
+                    <!-- card -->
+                    <!-- card -->
+                    <div class="bg-white rounded-2xl pt-6 pl-6 pr-6 pb-[26px] transition duration-300 ease-in-out hover:shadow-[0_0_11px_rgba(33,33,33,0.2)] cursor-pointer">
+                        <div class="rounded-2xl overflow-hidden"><img src="./images/3ddesign.png" alt=" full stack developer"></div>
+                        <div class="mt-6 text-cblack poppins-bold text-2xl leading-9 mb-1">3D Character Design</div>
+                        <div class="flex mb-2">
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Abdurauf
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg dot">
+                                <img src="./images/cardopen-book.svg" alt="">
+                                8 oy
+                            </div>
+                            <div class="flex items-center gap-2 text-cviolet text-lg">
+                                <img src="./images/cardaccount.svg" alt="">
+                                Haftada 3 kun
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="poppins-bold leading-9 text-base text-cblack"><span class="text-2xl text-cgreen">800 000 </span> so’m/oy</div>
+                            <div class="poppins-regular text-lg text-cgreen leading-[27px]"><a href="#">Batafsil</a></div>
+                        </div>
+
+                    </div>
+                    <!-- card -->
+                    
+
+                </section>
+            </article>
+
+            <article class="flex justify-between items-center">
+                <div class="text-cviolet text-xs leading-[21px] ">Showing <span class="poppins-semibold text-cgreen ">1-6</span> from <span class="poppins-semibold text-cgreen ">100</span> data</div>
+                <div class="flex gap-4 items-center justify-center">
+                    <button class="hover:scale-125"><img src="./images/chevron-left.svg" alt=""></button>
+                    <div class="flex items-center justify-center bg-cgreen bg-opacity-10 rounded-lg text-cgreen size-[50px] leading-[27px]">1</div>
+                    <div class="flex items-center justify-center bg-cgreen bg-opacity-10 rounded-lg text-cgreen size-[50px] leading-[27px] activated">2</div>
+                    <div class="flex items-center justify-center bg-cgreen bg-opacity-10 rounded-lg text-cgreen size-[50px] leading-[27px]">3</div>
+                    <button class="hover:scale-125"><img src="./images/chevron-right-gray.svg" alt=""></button>
+                </div>
+            </article>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            "2xl": { max: "1535px" },
+            // => @media (max-width: 1535px) { ... }
+
+            xl: { max: "1279px" },
+            // => @media (max-width: 1279px) { ... }
+
+            lg: { max: "1023px" },
+            // => @media (max-width: 1023px) { ... }
+
+            md: { max: "767px" },
+            // => @media (max-width: 767px) { ... }
+
+            sm: { max: "639px" },
+            // => @media (max-width: 639px) { ... }
+          },
+          extend: {
+            boxShadow: {
+              'addbutton': '0 20px 50px rgba(55, 69, 87, 0.1)',
+              'scaleshadow': '0 0 11px rgba(33, 33, 33, 0.2)',
+            },
+            colors: {
+              cgreen: "#4CBC9A",
+              cgray: "#fafafa",
+              cblack: "#374557",
+              cviolet: "#A098AE",
+              corange:"#FC6B57",
+              cringgray:"#DBDBDB",
+              cskyblue:"#3CC2E0",
+              cdarkgray:"#374557",
+              cyellow:"#FEC64F",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <main class="flex h-screen w-screen overflow-hidden bg-cgray">
+      <!-- aside navigation -->
+      <aside
+        class="bg-white h-screen w-[345px] px-[46px] xl:w-[300px] xl:px-5 py-8">
+        <a href="#" class="block text-center text-4xl poppins-bold text-cblack">
+          <span class="text-cgreen text-[40px]">LMS</span> admin
+        </a>
+        <div class="flex flex-col gap-4 mt-[85px] mb-[80px] xl:mb-5 xl:mt-5 xl:gap-2 text-cviolet">
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4 "
+          >
+            <img
+              src="./images/Apps.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Dashboard
+          </a>
+          <a
+            href="#"
+            class=" group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/open-book.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Courses
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/calendar.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Schedule
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/users.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Instructors
+          </a>
+          <a
+            href="#"
+            class="page-current group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/account.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Profile
+          </a>
+          <a
+            href="#"
+            class="group py-4 px-6 rounded-2xl flex gap-6 text-lg items-center hover:bg-cgreen hover:text-white hover-img xl:py-2 xl:px-4"
+          >
+            <img
+              src="./images/Activity.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
+            Activity
+          </a>
+        </div>
+        <!-- subscribe to pro -->
+        <div class="flex flex-col items-start bg-white rounded-2xl shadow-addbutton p-8 pr-[25px]">
+            <div class="flex items-end poppins-bold text-lg text-cblack leading-[27px] mb-2">
+              Upgrade your Account to Pro
+              <img src="./images/Medal.svg" alt="medal">
+            </div>
+            <div class="poppins-regular text-sm text-cviolet pr-[7px] mb-8 leading-[21px]">
+              Upgrade to premium to get premium features
+            </div>
+            <button class="text-white poppins-semibold text-sm bg-cgreen rounded-lg py-[9.5px] px-[22px] hover:bg-white hover:text-cgreen hover:ring-1 hover:ring-inset hover:ring-cgreen"> 
+              Upgrade
+            </button>
+        </div>
+      </aside>
+      <section class="flex-1 h-screen flex flex-col">
+        <!-- header -->
+        <header class="bg-white py-[30px] pl-10 pr-[50px] flex items-center">
+          <div class="poppins-bold text-4xl text-cblack">Courses</div>
+          <form class=" flex gap-2 ml-[191px] px-6 py-[14px] bg-cgray rounded-2xl hover:outline hover:outline-cgreen">
+            <img src="./images/magnifier.svg" alt="" />
+            <input type="text" placeholder="Search here..." class="w-[425px] bg-cgray text-cviolet text-lg focus:outline-0 "/>
+          </form>
+          <div class="flex ml-auto gap-2">
+            <button
+              class="group relative hover:bg-cgreen size-[60px] flex items-center justify-center rounded-2xl">
+              <span
+                class="size-2 bg-cgreen rounded absolute right-[10px] top-[10px] group-hover:brightness-0 group-hover:invert">
+              </span>
+              <img src="./images/chat.svg" alt="" class="group-hover:brightness-0 group-hover:invert"/>
+            </button>
+            <button
+              class="group relative hover:bg-cgreen size-[60px] flex items-center justify-center rounded-2xl"
+            >
+              <span
+                class="size-2 bg-cgreen rounded absolute right-[10px] top-[10px] group-hover:brightness-0 group-hover:invert"
+              >
+              </span>
+              <img
+                src="./images/Bell.svg"
+                alt=""
+                class="group-hover:brightness-0 group-hover:invert"
+              />
+            </button>
+            <a
+              href="#"
+              class="relative group hover:bg-cgreen size-[60px] flex items-center justify-center rounded-2xl"
+            >
+              <img
+                src="./images/Settings.svg"
+                alt=""
+                class="group-hover:brightness-0 group-hover:invert"
+              />
+            </a>
+            <a
+              href="#"
+              class="relative ml-4 size-[60px] flex items-center justify-center rounded-2xl overflow-hidden"
+            >
+              <img src="./images/avatar.jpg" alt="" class="cover" />
+            </a>
+          </div>
+        </header>
+        <!-- main section -->
+        <section>
+        <div class="grid grid-cols-3 grid-rows-[120px_266px_414px] gap-10 p-10 pr-[50px]">
+            <!-- instructor profile -->
+            <div class="row-span-3 rounded-2xl bg-white p-8 relative">
+                    <div class="flex flex-col items-center text-cviolet text-lg mb-6">
+                        <div class="w-[120px] h-[120px] rounded-2xl overflow-hidden mb-6">
+                            <img src="./images/placeholder.png" alt="">
+                        </div>
+                        <div class="mb-2 text-2xl poppins-bold text-cblack leading-9">Nella Vita</div>
+                        <div >Member Since 2020</div>
+                    </div>
+                    <div class="absolute top-8 right-8">
+                        <img src="./images/Dots.svg" alt="">
+                    </div>
+                    <!-- points and certificate -->
+                    <div class="flex gap-4 mb-[30px] w-full">
+                        <div class="rounded-2xl bg-cviolet/10 flex-1 py-[15px] px-6 flex flex-col items-start text-cviolet poppins-regular text-lg">
+                            <div>Points</div>
+                            <div class="text-cblack text-[32px] leading-[48px] poppins-bold mt-1">2300</div>
+                        </div>
+                        <div class="rounded-2xl bg-cviolet/10 flex-1 py-[15px] px-6 flex flex-col items-start text-cviolet poppins-regular text-lg">
+                            <div>Certificate</div>
+                            <div class="text-cblack text-[32px] leading-[48px] poppins-bold mt-1">50</div>
+                        </div>
+                    </div>
+                    <!-- achievements -->
+                    <div class="poppins-bold text-2xl text-cblack leading-9 space-y-4 mb-[22px]">
+                        <h1>Achievements</h1>
+                        <div class="flex gap-[11px] justify-center w-full">
+                            <div class="rounded-2xl p-4 bg-cgray">
+                                <img src="./images/cup.svg" alt="">
+                            </div>
+                            <div class="rounded-2xl p-4 bg-cgray">
+                                <img src="./images/Puzzle.svg" alt="">
+                            </div>
+                            <div class="rounded-2xl p-4 bg-cgray">
+                                <img src="./images/Planet.svg" alt="">
+                            </div>
+                            <div class="rounded-2xl p-4 bg-cgray">
+                                <img src="./images/Skill.svg" alt="">
+                            </div>
+                            <div class="rounded-2xl p-4 bg-cgray">
+                                <img src="./images//Reading Time.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bio -->
+                    <div class=" space-y-4">
+                        <h1 class="poppins-bold text-2xl text-cblack leading-9">Bio</h1>
+                        <div class="text-start p-6 bg-cgray rounded-lg poppins-regular text-sm text-cviolet leading-6">
+                            <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="mb-6">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                
+            </div>
+            <!--completed courses and progress -->
+              <div class=" flex flex-1 items-center bg-white rounded-3xl py-5 px-8 hover:shadow-addbutton transition duration-300 ease-in-out">
+                <div class=" flex items-center justify-center size-[80px] mr-10">
+                  <img src="./images/Degree Certificate.svg" alt="">
+                </div>
+                <div class="poppins-regular text-lg text-cblack flex-1">
+                  <div class="text-4xl leading-[54px] poppins-bold ">100</div>
+                  <div>
+                      Courses Completed
+                  </div>
+                </div>
+                <button class="ml-auto hover:scale-150"><img src="./images/chevron-right.svg" alt="" class="size-10"></button>
+              </div>
+              <div class=" flex flex-1 items-center bg-white rounded-3xl py-5 px-8 hover:shadow-addbutton transition duration-300 ease-in-out">
+                <div class=" flex items-center justify-center size-[80px] mr-10">
+                  <img src="./images/Clock.svg" alt="">
+                </div>
+                <div class="poppins-regular text-lg text-cblack flex-1">
+                  <div class="text-4xl leading-[54px] poppins-bold ">34</div>
+                  <div>
+                      Courses In Progress
+                  </div>
+                </div>
+                <button class="ml-auto hover:scale-150"><img src="./images/chevron-right-yellow.svg" alt="" class="size-10"></button>
+              </div>
+              
+            <!-- current courses -->
+              <div class="col-span-2">
+                  <div class="flex items-center justify-between mb-4">
+                      <div class="poppins-bold text-cblack text-2xl leading-9">Current Courses</div>
+                      <div class="flex gap-2 items-center group hover:scale-105">
+                          <div class="text-cgreen text-lg text-left leading-[27px] "><a href="#">View all</a>
+                          </div>
+                          <a href="#"><img src="./images/chevron-right.svg" alt="go"></a>
+                      </div>
+                  </div>
+                  <div class="flex items-center gap-[38px]">
+                  <!-- first course -->
+                  <div class="flex flex-1 items-center px-[35px] pt-[35px] pb-[29px] bg-white rounded-2xl">
+                      <div class="relative -z-1 w-[150px] h-[150px] overflow-hidden mr-[33px]">
+                                    <img src="./images/circle barg.svg" alt="" >
+                                    <div class="absolute poppins-bold text-cgreen text-2xl top-[56px] left-[48px] z-99">80%</div>
+                      </div>
+                      <div class="text-sm text-cviolet poppins-regular space-y-4">
+                                    <div class="space-y-1">
+                                        <p>Class</p>
+                                        <h3 class="poppins-semibold text-lg text-cblack">UI Design Beginner</h3>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <p>Total Courses</p>
+                                        <h3 class="poppins-semibold text-lg text-cblack">90 / 110</h3>
+                                    </div>
+                      </div>
+                  </div>
+                  <!-- second course -->
+                  <div class="flex flex-1 items-center px-[35px] pt-[35px] pb-[29px] bg-white rounded-2xl">
+                      <div class="relative -z-1 w-[150px] h-[150px] overflow-hidden mr-[33px]">
+                          <img src="./images/circle bar-yelllow.svg" alt="">
+                          <div class="absolute poppins-bold text-cyellow text-2xl top-[56px] left-[48px] z-99">62%</div>
+                      </div>
+                      <div class="text-sm text-cviolet poppins-regular space-y-4">
+                          <div class="space-y-1">
+                              <p>Class</p>
+                              <h3 class="poppins-semibold text-lg text-cblack">UX Research</h3>
+                          </div>
+                          <div class="space-y-1">
+                              <p>Total Courses</p>
+                              <h3 class="poppins-semibold text-lg text-cblack">50 / 80</h3>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+
+              <!-- bar graph "Progress" -->
+              <div class="rounded-[20px] bg-white p-8 col-span-2">
+                <!-- top -->
+                <div class="flex mb-7 items-center">
+                  <h2 class="poppins-bold text-2xl text-cblack">
+                    Progress
+                  </h2>
+                  <!-- colored rings -->
+                  <div
+                    class="flex gap-6 text-sm poppins-regular text-cviolet mr-[44px] ml-auto">
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="rounded-full size-3 bg-white ring-[3px] ring-inset ring-cyellow"></div>
+                      <p>Last Week</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="rounded-full size-3 bg-white ring-[3px] ring-inset ring-cgreen"></div>
+                      <p>This Week</p>
+                    </div>
+                  </div>
+                  <!-- select option -->
+                  <div class="relative inline-block w-[140px] h-10 after:content-[url('./images/chevron-downg.svg')] after:size-6 after:absolute after:top-1/2 after:right-[19px] after:-translate-y-1/2 after:cursor-pointer after:cursor-pointer mr-6">
+                    <select
+                      class="appearance-none poppins-regular text-cblack text-sm w-full bg-cgray rounded-lg border-none rounded-lg px-[19px] py-[9.5px]  outline-0 cursor-pointer">
+                      <option selected >This Week</option>
+                      <option >Last week</option>
+                      <option >2 weeks before</option>
+                      <option >3 weeks before</option>
+                    </select>
+                  </div>
+
+                  <!-- dots -->
+                  <button  class="size-6 hover:scale-110">
+                    <img src="./images/Dots.svg" alt="">
+                  </button>
+                </div>
+                <!-- bar graph -->
+                <div class="flex items-start gap-[23px]">
+                  <img src="./images/progress-bar.png" alt="">
+                  <div class="flex flex-col gap-8 text-sm poppins-regular text-cviolet">
+                    <div class="text-left space-y-[5px]">
+                      <p>This week</p>
+                      <h2 class="text-cgreen poppins-bold text-2xl leading-9">+32%</h2>
+                    </div>
+                    <div class="text-left space-y-[5px]">
+                      <p>Last Week</p>
+                      <h2 class="text-cyellow poppins-bold text-2xl leading-9">+24%</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        </section>
+
+      </section>
+    </main>
+  </body>
+</html>
